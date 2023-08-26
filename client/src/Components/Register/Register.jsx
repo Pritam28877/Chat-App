@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Register = () => {
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className="bg-blue-50 h-screen flex items-center">
       <form action="" className="w-64 mx-auto ">
@@ -9,6 +11,8 @@ const Register = () => {
           type="text"
           name=""
           id=""
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
           placeholder="Username"
         />
         <input
@@ -16,6 +20,8 @@ const Register = () => {
           type="password"
           name=""
           id=""
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="password"
         />
         <button className="bg-blue-500 text-white w-full rounded-sm p-2">
