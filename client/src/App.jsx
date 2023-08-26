@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
+import Register from "./Components/Register/Register";
 
 function App() {
   return (
     <>
-      <h1 className=" font-bold underline">Hello world!</h1>
+      <Register />
     </>
   );
 }
