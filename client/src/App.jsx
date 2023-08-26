@@ -4,9 +4,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div>
-        <h1>hello</h1>
-      </div>
+      <h1 className=" font-bold underline">Hello world!</h1>
     </>
   );
 }
