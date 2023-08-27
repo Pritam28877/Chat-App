@@ -1,5 +1,8 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
+const db = require("./config/mongodb");
 const server = require("./routes/server");
 
 app.get("/", (req, res) => {
