@@ -4,16 +4,16 @@ const express = require("express");
 const app = express();
 const db = require("./config/mongodb");
 const server = require("./routes/server");
-
+db();
 app.get("/", (req, res) => {
   res.json("server ok");
 });
 app.use("/register", server);
 
-app.listen(8000, (e) => {
-  if (e) {
-    console.log(e);
+app.listen(8000, (error) => {
+  if (error) {
+    console.log(error);
     return;
   }
-  console.log("8000");
+  console.log("the server ");
 });
