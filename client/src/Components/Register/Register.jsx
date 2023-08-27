@@ -1,11 +1,18 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 const Register = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    const response = await axios.post("/register", { user, password });
+    console.log(response);
+  };
   return (
     <div className="bg-blue-50 h-screen flex items-center">
-      <form action="" className="w-64 mx-auto ">
+      <form action="" className="w-64 mx-auto " onSubmit={handleRegister}>
         <input
           className="block w-full rounded-sm p-3 mb-2 border"
           type="text"
