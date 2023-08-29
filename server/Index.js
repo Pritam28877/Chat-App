@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const db = require("./config/mongodb");
 const server = require("./routes/server");
+const profile = require("./routes/profile");
 
 app.use(express.json());
 app.use(cookieParser());
@@ -20,7 +21,7 @@ app.get("/", (req, res) => {
   res.json("server ok");
 });
 app.use("/register", server);
-app.use("/profile");
+app.use("/profile", profile);
 
 app.listen(8000, (error) => {
   if (error) {
