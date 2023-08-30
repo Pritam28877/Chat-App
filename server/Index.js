@@ -7,6 +7,7 @@ const app = express();
 const db = require("./config/mongodb");
 const server = require("./routes/server");
 const profile = require("./routes/profile");
+const { checkUser, requireAuth } = require("./middleware/authmiddleware");
 
 app.use(express.json());
 app.use(cookieParser());
@@ -21,12 +22,12 @@ app.get("/", (req, res) => {
   res.json("server ok");
 });
 app.use("/register", server);
-app.use("/profile", profile);
+app.use("/profile",  profile);
 
 app.listen(8000, (error) => {
   if (error) {
     console.log(error);
     return;
   }
-  console.log("the server ");
+  console.log("the server is ");
 });

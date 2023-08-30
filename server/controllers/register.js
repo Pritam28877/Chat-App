@@ -15,9 +15,9 @@ const createToke = (id) => {
 //* the post action on the user create action
 module.exports.register = async (req, res) => {
   try {
-    const { user, password } = req.body;
+    const { user, password } = req?.body;
     console.log(user, password);
-    const createdNewUser = await User.create({ username: user, password });
+    const createdNewUser = await User?.create({ username: user, password });
     const token = createToke(createdNewUser._id);
     res.cookie("jwt", token, { httpOnly: true, maxage: maxage * 1000 });
     res.status(201).json({ user: createdNewUser._id });

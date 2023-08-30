@@ -10,6 +10,9 @@ function App() {
   const { username, id } = useGlobalContext();
   console.log(username);
   console.log(id);
+  if(username){
+    return "login-"
+  }
   return (
     <>
       <Register />
