@@ -3,11 +3,12 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
 
 module.exports.profilecontroller = (req, res) => {
-  console.log(req.cookies.jwt);
+  console.log(req.cookies);
   const token = req.cookies?.jwt;
   console.log(token);
   if (token) {
     jwt.verify(token, JWT_SECRET, (err, userData) => {
+      console.log(userData);
       if (err) throw err;
       res.json(userData);
     });

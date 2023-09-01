@@ -21,8 +21,8 @@ app.use(
 app.get("/", (req, res) => {
   res.json("server ok");
 });
+app.use("/profile", profile);
 app.use("/register", server);
-app.use("/profile",  profile);
 
 app.listen(8000, (error) => {
   if (error) {

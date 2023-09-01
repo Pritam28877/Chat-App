@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../../context/UserContext";
 
 const Register = () => {
-  const { setUsername, setId } = useGlobalContext();
+  const { username, setUsername, setId } = useGlobalContext();
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
