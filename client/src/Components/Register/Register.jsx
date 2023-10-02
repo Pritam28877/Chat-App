@@ -6,6 +6,7 @@ const Register = () => {
   const { username, setUsername, setId } = useGlobalContext();
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoginOrRegister, setIsLoginOrRegister] = useState(true);
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -35,8 +36,17 @@ const Register = () => {
           placeholder="password"
         />
         <button className="bg-blue-500 text-white w-full rounded-sm p-2">
-          Register
+          {isLoginOrRegister ? "Login" : "Register"}
         </button>
+        <div className="text-center mt-2">
+          Already member
+          <button
+            className="text-blue-500 underline"
+            onClick={() => setIsLoginOrRegister(!isLoginOrRegister)}
+          >
+            {isLoginOrRegister ? "Register" : "Login"}
+          </button>
+        </div>
       </form>
     </div>
   );
