@@ -9,8 +9,9 @@ const Register = () => {
   const [isLoginOrRegister, setIsLoginOrRegister] = useState(true);
 
   const handleRegister = async (event) => {
+    const url = isLoginOrRegister ? "/login" : "/register";
     event.preventDefault();
-    const response = await axios.post("/register", { user, password });
+    const response = await axios.post(url, { user, password });
     setUsername(user);
     setId(response.data.user);
   };
