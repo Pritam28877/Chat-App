@@ -10,7 +10,7 @@ function App() {
   axios.defaults.withCredentials = true;
   const { username, id } = useGlobalContext();
   if (username) {
-    return "login-";
+    return "yo-";
   }
   return (
     <>
