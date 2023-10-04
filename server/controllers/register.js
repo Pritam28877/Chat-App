@@ -18,7 +18,6 @@ const createToke = (id, user) => {
 module.exports.register = async (req, res) => {
   try {
     const { user, password } = req?.body;
-    console.log(user, password);
     const hashedPassword = bcrypt.hashSync(password, bcryptSalt);
     const createdNewUser = await User?.create({
       username: user,
