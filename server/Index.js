@@ -5,8 +5,9 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const app = express();
 const db = require("./config/mongodb");
-const server = require("./routes/server");
+const register = require("./routes/register");
 const profile = require("./routes/profile");
+const login = require("./routes/login");
 const { checkUser, requireAuth } = require("./middleware/authmiddleware");
 
 app.use(express.json());
@@ -22,7 +23,8 @@ app.get("/", (req, res) => {
   res.json("server ok");
 });
 app.use("/profile", profile);
-app.use("/register", server);
+app.use("/register", register);
+app.use("/login", login);
 
 app.listen(8000, (error) => {
   if (error) {
