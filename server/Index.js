@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const app = express();
 const db = require("./config/mongodb");
+const bcrypt = require("bcryptjs");
 const register = require("./routes/register");
 const profile = require("./routes/profile");
 const login = require("./routes/login");
