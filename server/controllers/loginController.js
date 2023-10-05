@@ -15,7 +15,6 @@ const createToke = (id, user) => {
 
 module.exports.logincontroller = async (req, res) => {
   const { user, password } = req?.body;
-  console.log(user, password);
   const founderUser = await User.findOne({ username: user });
   if (founderUser) {
     const passOk = bcrypt.compareSync(password, founderUser.password);
