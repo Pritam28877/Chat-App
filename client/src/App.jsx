@@ -8,10 +8,7 @@ import Route from "./Components/Route";
 function App() {
   axios.defaults.baseURL = "http://localhost:8000";
   axios.defaults.withCredentials = true;
-  const { username, id } = useGlobalContext();
-  if (username) {
-    return "yo-";
-  }
+ 
   return (
     <>
       <Route />
