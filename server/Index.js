@@ -40,4 +40,5 @@ const wss = new ws.WebSocketServer({ server });
 
 wss.on("connection", (connection) => {
   console.log("new connection");
+  connection.send("welcome to the chat");
 });

@@ -4,8 +4,13 @@ import Send from "../../icons/send";
 const Chat = () => {
   const [messages, setMessages] = useState();
   useEffect(() => {
-    new WebSocket("ws://localhost:8000");
+    const ws = new WebSocket("ws://localhost:8000");
+    setMessages(ws);
+    ws.addEventListener("message", handleMessage);
   }, []);
+  const handleMessage = (e) => {
+    console.log("hi", e);
+  };
   return (
     <div className="flex h-screen ">
       <div className="bg-blue-100 w-1/3">contacts</div>
