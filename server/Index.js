@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const db = require("./config/mongodb");
 const bcrypt = require("bcryptjs");
+const ws = require("ws");
 const register = require("./routes/register");
 const profile = require("./routes/profile");
 const login = require("./routes/login");
@@ -33,4 +34,10 @@ const server = app.listen(8000, (error) => {
     return;
   }
   console.log("the server is ");
+});
+
+const wss = new ws.WebSocketServer({ server });
+
+wss.on("connection", (connection) => {
+  console.log("new connection");
 });

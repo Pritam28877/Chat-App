@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Send from "../../icons/send";
 
 const Chat = () => {
+  const [messages, setMessages] = useState();
+  useEffect(() => {
+    new WebSocket("ws://localhost:8000");
+  }, []);
   return (
     <div className="flex h-screen ">
       <div className="bg-blue-100 w-1/3">contacts</div>
