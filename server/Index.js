@@ -27,7 +27,7 @@ app.use("/profile", profile);
 app.use("/register", register);
 app.use("/login", login);
 
-app.listen(8000, (error) => {
+const server = app.listen(8000, (error) => {
   if (error) {
     console.log(error);
     return;
