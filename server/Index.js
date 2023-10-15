@@ -63,12 +63,12 @@ wss.on("connection", (connection, req) => {
   // console.log(cookie);
   [...wss.clients].forEach((client) => {
     client.send(
-      JSON.stringify(
-        [...wss.clients].map((c) => ({
+      JSON.stringify({
+        online: [...wss.clients].map((c) => ({
           id: c.id,
           user: c.user,
-        }))
-      )
+        })),
+      })
     );
   });
 });

@@ -9,10 +9,12 @@ const Chat = () => {
     ws.addEventListener("message", handleMessage);
   }, []);
 
-  const showOnline = () => {};
+  const showOnline = (person) => {
+    console.log(person);
+  };
   const handleMessage = (e) => {
     const messagedata = JSON.parse(e.data);
-    console.log(messagedata);
+    // console.log(messagedata);
     if ("online" in messagedata) {
       showOnline(messagedata.online);
     }
