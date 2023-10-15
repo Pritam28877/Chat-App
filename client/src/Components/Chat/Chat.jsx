@@ -8,8 +8,14 @@ const Chat = () => {
     setMessages(ws);
     ws.addEventListener("message", handleMessage);
   }, []);
+
+  const showOnline = () => {};
   const handleMessage = (e) => {
-    console.log("hi", e);
+    const messagedata = JSON.parse(e.data);
+    console.log(messagedata);
+    if ("online" in messagedata) {
+      showOnline(messagedata.online);
+    }
   };
   return (
     <div className="flex h-screen ">
