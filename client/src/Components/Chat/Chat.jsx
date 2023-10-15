@@ -27,10 +27,12 @@ const Chat = () => {
   };
   return (
     <div className="flex h-screen ">
-      <div className="bg-blue-100 w-1/3">
+      <div className="bg-blue-100 w-1/3 p-2">
         {Object.keys(online).map((id) => (
           <div key={id} className="flex gap-2 p-2">
-            <div>{online[id]}</div>
+            <div className="border-b border-gray-100 py-0 ">
+              {online[id]}
+            </div>
             <div></div>
           </div>
         ))}
