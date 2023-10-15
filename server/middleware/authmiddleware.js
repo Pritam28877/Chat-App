@@ -25,12 +25,13 @@ const requireAuth = (req, res, next) => {
 
 const checkUser = async (req, res, next) => {
   const token = req.cookies.jwt;
+  console.log(token);
   if (token) {
     jwt.verify(token, JWT_SECRET, async (err, decodedToken) => {
       if (err) {
         if (err) throw err;
       } else {
-        let user = await User.findById(decodedToken.id);       
+        let user = await User.findById(decodedToken.id);
         next();
       }
     });
